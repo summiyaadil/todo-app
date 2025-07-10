@@ -3,6 +3,11 @@ module "resource_group" {
   resource_group_name =  "todoapp-rg-s_a"
   resource_group_location = "uk west"
 }
+module "resource_group1" {
+  source = "../Modules/azurerm_resource_group"
+  resource_group_name =  "rg-Reading"
+  resource_group_location = "uk west"
+}
 
 module "virtual_network" {
   depends_on = [ module.resource_group ]
