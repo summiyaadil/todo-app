@@ -8,6 +8,11 @@ module "resource_group1" {
   resource_group_name =  "rg-Reading"
   resource_group_location = "uk west"
 }
+module "resource_group2" {
+  source = "../Modules/azurerm_resource_group"
+  resource_group_name =  "rg-Islamabad"
+  resource_group_location = "us central"
+}
 
 module "virtual_network" {
   depends_on = [ module.resource_group ]
